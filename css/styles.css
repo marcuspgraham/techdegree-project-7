@@ -1,0 +1,162 @@
+
+
+* {
+    padding: 0;
+    margin: 0;
+    display: border-box;
+    
+  }
+
+/* ================================= 
+  Header Styles
+==================================== */
+
+.header-container,
+.member-image {
+    display: flex;
+    align-items: center;
+}
+
+.header-container {
+    font-family: 'Montserrat', sans-serif;
+	line-height: 1.5;
+	color: white;
+    background-color: #7578BF;
+    padding: 0 15px;
+    height: 100%;
+}
+
+h1 {
+    margin: 0 auto 0 0;
+}
+
+.member-image {
+    margin: 15px;
+    border-left: 1px solid #000;
+    margin-left: 15px;
+    padding-left: 15px;
+}
+
+.profile-image {
+    width: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.bell-icon {
+    height: 30px;
+}
+
+
+/* ================================= 
+  Nav Styles
+==================================== */
+
+.navigation-container {
+    display: flex;
+    justify-content: center;
+    background-color: #4D4F73;
+    align-items: top;
+    height: 100%;
+} 
+
+ul li {
+    display: inline-block;
+    width: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+    padding: 10px 10px;
+    padding-top: 30px;
+}
+
+
+/* ================================= 
+  Grid Layout
+==================================== */
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 0.4fr repeat(2, 1.3fr);
+    grid-template-rows: repeat(7, 1fr);
+    grid-template-areas: 
+    "header-container header-container header-container"
+    "navigation-container dashboard-container dashboard-container"
+    "navigation-container traffic-container traffic-container"
+    "navigation-container dailytraffic-container mobileusers-container"
+    "navigation-container socialstats-container socialstats-container"
+    "navigation-container newmembers-container recentactivity-container"
+    "navigation-container messageuser-container settings-container";
+}
+
+header {
+    grid-area: header-container;
+}
+
+nav {
+    grid-area: navigation-container;
+}
+
+.dashboard-container {
+    background: darkcyan;
+    grid-area: dashboard-container;
+}
+
+.traffic-container {
+    background: blueviolet;
+    grid-area: traffic-container;
+}
+
+.dailytraffic-container {
+    background: magenta;
+    grid-area: dailytraffic-container;
+}
+
+.mobileusers-container {
+    background: mediumseagreen;
+    grid-area: mobileusers-container;
+}
+
+.socialstats-container {
+    background: maroon;
+    grid: socialstats-container;
+}
+
+.newmembers-container {
+    background: burlywood;
+    grid: newmembers-container;
+}
+
+.recentactivity-container {
+    background: pink;
+    grid: recentactivity-container;
+}
+
+.messageuser-container {
+    background: greenyellow;
+    grid: messageuser-container;
+}
+
+.settings-container {
+    background: grey;
+    grid: settings-container;
+}
+
+
+@media (max-width: 550px) {
+    .grid-container {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(2, 0.7fr) repeat(6, 1.1fr);
+        grid-template-areas: 
+        "header-container"
+        "navigation-container"
+        "dashboard-container"
+        "traffic-container"
+        "dailytraffic-container"
+        "mobileusers-container"
+        "socialstats-container"
+        "newmembers-container"
+        "recentactivity-container"
+        "messageuser-container"
+        "settings-container";
+    }
+}
