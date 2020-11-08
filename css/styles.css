@@ -69,6 +69,19 @@ ul li {
     padding-top: 30px;
 }
 
+/* ================================= 
+  Socialstats Container Styles
+==================================== */
+
+.twitter-image,
+.twitter-text {
+    display: block;
+    width: 70px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+
 
 /* ================================= 
   Grid Layout
@@ -77,10 +90,11 @@ ul li {
 .grid-container {
     display: grid;
     grid-template-columns: 0.4fr repeat(2, 1.3fr);
-    grid-template-rows: repeat(7, 1fr);
+    grid-template-rows: repeat(8, .8fr);
     grid-template-areas: 
     "header-container header-container header-container"
     "navigation-container dashboard-container dashboard-container"
+    "navigation-container alertbar-container alertbar-container"
     "navigation-container traffic-container traffic-container"
     "navigation-container dailytraffic-container mobileusers-container"
     "navigation-container socialstats-container socialstats-container"
@@ -94,6 +108,11 @@ header {
 
 nav {
     grid-area: navigation-container;
+}
+
+.alertbar-container {
+    background: orange;
+    grid-area: alertbar-container;
 }
 
 .dashboard-container {
@@ -118,7 +137,7 @@ nav {
 
 .socialstats-container {
     background: maroon;
-    grid: socialstats-container;
+    grid-area: socialstats-container;
 }
 
 .newmembers-container {
@@ -128,28 +147,29 @@ nav {
 
 .recentactivity-container {
     background: pink;
-    grid: recentactivity-container;
+    grid-area: recentactivity-container;
 }
 
 .messageuser-container {
     background: greenyellow;
-    grid: messageuser-container;
+    grid-area: messageuser-container;
 }
 
 .settings-container {
     background: grey;
-    grid: settings-container;
+    grid-area: settings-container;
 }
 
 
 @media (max-width: 550px) {
     .grid-container {
         grid-template-columns: 1fr;
-        grid-template-rows: repeat(2, 0.7fr) repeat(6, 1.1fr);
+        grid-template-rows: 0.6fr 0.6fr 0.8fr 0.8fr 1.8fr 1.2fr 1.2fr 1fr 1fr 1fr 1fr 1fr;
         grid-template-areas: 
         "header-container"
         "navigation-container"
         "dashboard-container"
+        "alertbar-container"
         "traffic-container"
         "dailytraffic-container"
         "mobileusers-container"
