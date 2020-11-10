@@ -5,272 +5,225 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="css/styles.css">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
-  <title>Web App Dashboard</title>
+  <title>Document</title>
 </head>
 
-<div class="grid-container">
-  
-<header>
-  <div class="header-container">
-  <h1>YourApp&trade;</h1>
-    <div class="bell-container">
-      <img id="icon-bell" class="bell-icon" src="icons/icon-bell.svg" alt="bell icon">
-      <div class="notifications"></div>
+<body class="grid-container">
+
+  <header>
+    <div class="header-container">
+    <h1>YourApp&trade;</h1>
+      <div class="bell-container">
+        <img id="icon-bell" class="bell-icon" src="icons/icon-bell.svg" alt="bell icon">
+        <div class="notifications">
+          <!-- container element for our notifications -->
+        </div>
+      </div>
+      <div class="member-image">
+      <img src="images/me_2.png" class="profile-image">
+      <h3>Marcus Graham</h3>
+      </div>
+    </div><!-- header-container -->
+  </header>
+
+  <nav>
+    <div class="navigation-container">
+      <a ref="#">
+        <img src="icons/icon-dashboard.svg" alt="Image of Calculator" class="calculator">
+      </a>
+      <a ref="#">
+        <img src="icons/icon-members.svg" alt="Image of Person" class="person">
+      </a>
+      <a ref="#">
+        <img src="icons/icon-visits.svg" alt="Image of Graph" class="graph">
+      </a>
+      <a ref="#">
+        <img src="icons/icon-settings.svg" alt="Image of Sliders" class="sliders">
+      </a>
     </div>
-    <div class="member-image">
-    <img src="images/me_2.png" class="profile-image">
-    <h3>Marcus Graham</h3>
-    </div>
-  </div><!-- header-container -->
-</header>
+  </nav>
 
-<nav>
-  <div class="navigation-container">
-    <ul class="nav-list">
-    <a ref="#">
-      <li><img src="icons/icon-dashboard.svg" alt="Image of Calculator" class="calculator"></li>
-    </a>
-    <a>
-      <li><img src="icons/icon-members.svg" alt="Image of Person" class="person"></li>
-    </a>
-    <a>
-      <li><img src="icons/icon-visits.svg" alt="Image of Graph" class="graph"></li>
-    </a>
-    <a>
-      <li><img src="icons/icon-settings.svg" alt="Image of Sliders" class="sliders"></li>
-    </a>
-   </ul>
-  </div>
-</nav>
-
-
-  <div class="dashboard-container">
-    <div class="main-header"> 
+  <main>
+    <div class="main-header">
       <h2 class="headline">Dashboard</h2>
       <div class="main-header-search">
         <input type="search" placeholder="Search..." />
       </div>
-    </div>
-  </div>
+      </div>
 
-  <div class="alertbar-container">
-    alertbar
     <!-- alert banner -->
     <div class="alert" id="alert" >
     <!-- JS will insert alert here -->
     </div>
-  </div>
 
-  <div class="traffic-container">
     <!-- line graph charts -->
     <section class="traffic">
-      <div class="traffic-header">
-        <h3>Traffic</h3>
-          <ul class="traffic-nav">
-            <li class="traffic-nav-link">Hourly</li>
-            <li class="traffic-nav-link">Daily</li>
-            <li class="traffic-nav-link active">Weekly</li>
-            <li class="traffic-nav-link">Monthly</li>
-          </ul>
-        </div>
-        <div class="widget-container-full">
-        <!-- element line graph will attach to -->
-        <canvas id="traffic-chart"></canvas>
+    <div class="traffic-header">
+      <h3>Traffic</h3>
+        <ul class="traffic-nav">
+        <li class="traffic-nav-link">Hourly</li>
+        <li class="traffic-nav-link">Daily</li>
+        <li class="traffic-nav-link active">Weekly</li>
+        <li class="traffic-nav-link">Monthly</li>
+      </ul>
       </div>
+      <div class="widget-container-full">
+      <!-- element line graph will attach to -->
+      <canvas id="traffic-chart"></canvas>
+    </div>
     </section>
-  </div>
 
-  <div class="dailytraffic-container">
     <!-- bar graph -->
     <section class="daily">
       <h3>Daily Traffic</h3>
       <div class="widget-container-half">
-        <!-- element bar graph will attach to -->
-        <canvas id="daily-chart"></canvas>
+      <!-- element bar graph will attach to -->
+      <canvas id="daily-chart"></canvas>
       </div>
     </section>
-  </div>
 
-  <div class="mobileusers-container">
-    <!-- bar graph -->
-    <section class="daily">
+    <!-- Doughnut Chart -->
+    <section class="mobile">
       <h3>Mobile Users</h3>
       <div class="widget-container-half">
-        <!-- element bar graph will attach to -->
-        <canvas id="mobile-users-doughnut"></canvas>
+      <!-- element bar graph will attach to -->
+      <canvas id="mobile-chart"></canvas>
       </div>
     </section>
-  </div>
-  
-  <div class="socialstats-container">
-            <!-- <img src="placeholder images/social_stats.png" class="image"> -->
-            <div class="container">
-            <div class="twitter-image">
-              <!-- inline SVG not included for brevity -->
-                  <svg class="birdgraphic" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                    viewBox="0 0 32 32" style="enable-background:new 0 0 32 32;" xml:space="preserve">
-                    <path fill="white" d="M32,3.1c-1.2,0.5-2.4,0.9-3.8,1c1.4-0.8,2.4-2.1,2.9-3.6c-1.3,0.8-2.7,1.3-4.2,1.6C25.8,0.8,24,0,22.2,0
-                    c-3.6,0-6.6,2.9-6.6,6.6c0,0.5,0.1,1,0.2,1.5C10.3,7.8,5.5,5.2,2.2,1.2c-0.6,1-0.9,2.1-0.9,3.3c0,2.3,1.2,4.3,2.9,5.5
-                    c-1.1,0-2.1-0.3-3-0.8c0,0,0,0.1,0,0.1c0,3.2,2.3,5.8,5.3,6.4c-0.6,0.1-1.1,0.2-1.7,0.2c-0.4,0-0.8,0-1.2-0.1
-                    c0.8,2.6,3.3,4.5,6.1,4.6c-2.2,1.8-5.1,2.8-8.2,2.8c-0.5,0-1.1,0-1.6-0.1c2.9,1.9,6.4,3,10.1,3c12.1,0,18.7-10,18.7-18.7
-                    c0-0.3,0-0.6,0-0.8C30,5.6,31.1,4.4,32,3.1z"/>
-                  </svg>
-              </div><!-- twitter-image -->
-                <div class="twitter-text">
-                  <p>Twitter</p>
-                  <p>10,345</p>
-                </div>
-              </div>
-            </div>
-          </div>
-  
-            <div class="container">
-            <div class="facebook-image">
-              <!-- inline SVG not included for brevity -->
-                <svg enable-background="new 0 0 56.693 56.693" height="56.693px" id="Layer_1" version="1.1" viewBox="0 0 56.693 56.693" width="56.693px" 
-                  xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                  <path fill="white" d="M40.43,21.739h-7.645v-5.014c0-1.883,1.248-2.322,2.127-2.322c0.877,0,5.395,0,5.395,0V6.125l-7.43-0.029  
-                    c-8.248,0-10.125,6.174-10.125,10.125v5.518h-4.77v8.53h4.77c0,10.947,0,24.137,0,24.137h10.033c0,0,0-13.32,0-24.137h6.77  L40.43,21.739z"/>
-                </svg>
-              </div><!-- facebook-image -->
-                <div class="facebook-text">
-                  <p>Facebook</p>
-                  <p>10,345</p>
-                </div>
-              </div>
-            </div>
-          </div>
-  
-             <div class="container">         
-            <div class="google-image">
-              <!-- inline SVG not included for brevity -->
-                <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                  viewBox="0 0 32 32" style="enable-background:new 0 0 32 32;" xml:space="preserve">
-                  <path fill="white" d="M17.7,25.7c0-0.3,0-0.5-0.1-0.8c-0.1-0.2-0.1-0.5-0.2-0.7c-0.1-0.2-0.2-0.4-0.3-0.7c-0.2-0.2-0.3-0.4-0.4-0.6
-                  c-0.1-0.2-0.3-0.3-0.5-0.6c-0.2-0.2-0.4-0.4-0.5-0.5c-0.1-0.1-0.3-0.3-0.6-0.5c-0.3-0.2-0.5-0.4-0.6-0.4s-0.3-0.2-0.6-0.4
-                  c-0.3-0.2-0.5-0.4-0.6-0.4c-0.2,0-0.5,0-1,0c-0.7,0-1.4,0-2,0.1c-0.7,0.1-1.4,0.2-2.1,0.5c-0.7,0.2-1.3,0.5-1.9,0.9s-1,0.8-1.3,1.4
-                  c-0.3,0.6-0.5,1.3-0.5,2.1c0,0.9,0.2,1.7,0.7,2.3c0.5,0.7,1.1,1.2,1.8,1.6s1.5,0.7,2.3,0.9s1.6,0.3,2.4,0.3c0.8,0,1.5-0.1,2.2-0.2
-                  c0.7-0.2,1.3-0.4,1.9-0.8c0.6-0.3,1.1-0.8,1.4-1.4C17.5,27.2,17.7,26.5,17.7,25.7z M15.4,9.1c0-0.8-0.1-1.6-0.3-2.5
-                  c-0.2-0.9-0.5-1.7-0.9-2.5c-0.4-0.8-0.9-1.5-1.6-2c-0.7-0.5-1.5-0.8-2.3-0.8c-1.2,0-2.1,0.4-2.8,1.3c-0.7,0.9-1,1.9-1,3.2
-                  c0,0.6,0.1,1.2,0.2,1.9c0.1,0.7,0.4,1.3,0.7,2c0.3,0.7,0.7,1.3,1.1,1.8c0.4,0.5,0.9,1,1.5,1.3c0.6,0.3,1.2,0.5,1.9,0.5
-                  c1.2,0,2.1-0.4,2.7-1.2C15.1,11.4,15.4,10.4,15.4,9.1z M12.9,0h8.4l-2.6,1.5h-2.6c0.9,0.6,1.6,1.4,2.1,2.4s0.8,2.1,0.8,3.2
-                  c0,0.9-0.1,1.8-0.4,2.5c-0.3,0.7-0.7,1.3-1.1,1.8c-0.4,0.4-0.8,0.9-1.3,1.2c-0.4,0.4-0.8,0.8-1.1,1.2c-0.3,0.4-0.4,0.8-0.4,1.3
-                  c0,0.3,0.1,0.7,0.3,1c0.2,0.3,0.5,0.6,0.8,0.9c0.3,0.3,0.7,0.6,1.1,0.9c0.4,0.3,0.8,0.7,1.2,1.1c0.4,0.4,0.8,0.8,1.1,1.3
-                  c0.3,0.5,0.6,1,0.8,1.6c0.2,0.6,0.3,1.3,0.3,2c0,2.1-0.9,3.9-2.7,5.4c-1.9,1.7-4.6,2.5-8.1,2.5c-0.8,0-1.5-0.1-2.3-0.2
-                  c-0.8-0.1-1.6-0.3-2.3-0.6c-0.8-0.3-1.5-0.7-2.1-1.1c-0.6-0.4-1.1-1-1.5-1.7C1,27.6,0.8,26.9,0.8,26c0-0.8,0.2-1.6,0.7-2.6
-                  c0.4-0.8,1-1.5,1.8-2.1c0.8-0.6,1.8-1.1,2.8-1.4c1-0.3,2-0.5,3-0.7c0.9-0.1,1.9-0.2,2.9-0.3c-0.8-1.1-1.2-2-1.2-2.9
-                  c0-0.2,0-0.3,0-0.5c0-0.1,0.1-0.3,0.1-0.4c0-0.1,0.1-0.2,0.2-0.4c0.1-0.2,0.1-0.3,0.1-0.4c-0.5,0.1-1,0.1-1.3,0.1
-                  c-1.9,0-3.5-0.6-4.9-1.9c-1.4-1.3-2-2.8-2-4.7c0-1.8,0.6-3.4,1.8-4.8C6,1.7,7.5,0.8,9.3,0.4C10.5,0.1,11.7,0,12.9,0z M32.8,4.9v2.5
-                  h-4.9v4.9h-2.5V7.4h-4.9V4.9h4.9V0h2.5v4.9H32.8z"/>
-                </svg>         
-              </div><!-- google-image -->
-                <div class="google-text">
-                  <p>Google+</p>
-                  <p>10,345</p>
-                </div>
-              </div>
-            </div>  
-  </div>
 
-  <div class="newmembers-container">
-    new members
+    <div class="social-container">
+      <div class="twitter-image"
+      <!-- inline SVG not included for brevity -->
+      </div>
+      <div class="twitter-text">
+      <p>Twitter</p>
+      <p>10,345</p>
+      </div>
+      </div>
+
+      <div class="facebook-image"
+      <!-- inline SVG not included for brevity -->
+      </div>
+      <div class="facebook-text">
+      <p>Twitter</p>
+      <p>10,345</p>
+      </div>
+
+      <div class="google-image"
+      <!-- inline SVG not included for brevity -->
+      </div>
+      <div class="google-text">
+      <p>Twitter</p>
+      <p>10,345</p>
+      </div>
+      </div>
+      </div><!-- social-container -->
+
       <!-- new members widget -->
       <section class="members">
-        <!-- <img src="placeholder images/new_members.png" class="image"> -->
+      <h3>New Members</h3>
+
+      <div class="members-container">
+      <img src="images/Sept2018Profile.jpg" class="profile-image">
+      <div class="members-text">
+      <p>Victoria Chambers</p>
+      <a href="#">victoria.chambers80@example.com</a>
+      </div>
+      <p>10/15/15</p>
+
+      <div class="members-container">
+      <img src="images/Sept2018Profile.jpg" class="profile-image">
+      <div class="members-text">
+      <p>Victoria Chambers</p>
+      <a href="#">victoria.chambers80@example.com</a>
+      </div>
+      <p>10/15/15</p>
+
+      <div class="members-container">
+      <img src="images/Sept2018Profile.jpg" class="profile-image">
+      <div class="members-text">
+      <p>Victoria Chambers</p>
+      <a href="#">victoria.chambers80@example.com</a>
+      </div>
+      <p>10/15/15</p>
+
+      <div class="members-container">
+      <img src="images/Sept2018Profile.jpg" class="profile-image">
+      <div class="members-text">
+      <p>Victoria Chambers</p>
+      <a href="#">victoria.chambers80@example.com</a>
+      </div>
+      <p>10/15/15</p>
+
+      </div><!-- members -->
+
+      <!-- recent activity widget -->
+      <section class="activity">
         <h3>New Members</h3>
-
-          <div class="victoria-container">
-              <img src="images/Victoria.jpg" class="victoria-image">
-            <div class="victoria-text">
-              <p>Victoria Chambers</p>
-              <a href="#">victoria.chambers80@example.com</a>
-            </div>
-          <p>10/15/15</p>
-         </div>
-
-         <div class="dale-container">
-              <img src="images/Dale.jpg" class="dale-image">
-            <div class="dale-text">
-              <p>Dale Byrd</p>
-              <a href="#">dale.bryd52@example.com</a>
-            </div>
-          <p>10/15/15</p>
+  
+        <div class="members-container">
+        <img src="images/Sept2018Profile.jpg" class="profile-image">
+        <div class="members-text">
+        <p>Victoria Chambers</p>
+        <a href="#">victoria.chambers80@example.com</a>
         </div>
-
-        <div class="dawn-container">
-              <img src="images/Dawn.jpg" class="dawn-image">
-            <div class="dawn-text">
-              <p>Dawn Wood</p>
-              <a href="#">dawn.wood16@example.com</a>
-            </div>
-          <p>10/15/15</p>
+        <p>10/15/15</p>
+  
+        <div class="members-container">
+        <img src="images/Sept2018Profile.jpg" class="profile-image">
+        <div class="members-text">
+        <p>Victoria Chambers</p>
+        <a href="#">victoria.chambers80@example.com</a>
         </div>
-
-        <div class="dan-container">
-              <img src="images/Dan.jpg" class="dan-image">
-            <div class="dan-text">
-              <p>Dan Oliver</p>
-              <a href="#">dan.oliver82@example.com</a>
-            </div>
-          <p>10/15/15</p>
+        <p>10/15/15</p>
+  
+        <div class="members-container">
+        <img src="images/Sept2018Profile.jpg" class="profile-image">
+        <div class="members-text">
+        <p>Victoria Chambers</p>
+        <a href="#">victoria.chambers80@example.com</a>
         </div>
-        </section><!-- members-section -->
+        <p>10/15/15</p>
+  
+        <div class="members-container">
+        <img src="images/Sept2018Profile.jpg" class="profile-image">
+        <div class="members-text">
+        <p>Victoria Chambers</p>
+        <a href="#">victoria.chambers80@example.com</a>
+        </div>
+        <p>10/15/15</p>
+  
+        </div><!-- activity -->
 
-  </div>
+        <!-- messaging widget -->
+        <section class="message">
+        <h3>Message User</h3>
+        <form class="widget-container">
+        <input type="text" placeholder="Search for user" class="form-field" id="userField">
+        <textarea placeholder="Message for user" class="form-area" id= "messageField" ></textarea>
+        <button class="button-primary" id="send" >Send</button>
+        </form>
+        </section> 
 
-  <div class="recentactivity-container">
-    recent activity
+        <!-- local settings widget -->
+        <section class="settings">
+        <h3>Settings</h3>
 
-        <!-- recent activity widget -->
+        <!-- custom CSS toggle code-->
+        <!-- custom CSS toggle code-->
 
-        <section class="activity">
-          <!-- <img src="placeholder images/recent_activity.png" class="image"> -->
-          <h3>Recent Activity</h3>
+        <select class="form-field" id="timezone">
+        <option disabled selected>Select a Timezone</option>
+        <option>Eastern</option>
+        <!-- more options -->
+        </select>
+        <div class="settings-button" >
+        <button class="button-primary" id="save">Save</button>
+        <button class="button-disabled" id="cancel">Cancel</button>
+        </div>
+        </section>
 
-            <div class="victoria-activity">
-                <img src="images/Victoria.jpg" class="victoria-image">
-              <div class="victoria-comment">
-                <p>Victoria Chambers commentend on YourApp's SEO Tips</p>
-                <p>4 Hours ago</p>
-              </div>
-           </div>
-
-           <div class="dale-activity">
-                <img src="images/Dale.jpg" class="dale-image">
-              <div class="dale-comment">
-                <p>Dale Byrd</p>
-                <a href="#">dale.bryd52@example.com</a>
-              </div>
-            <p>10/15/15</p>
-          </div>
-
-          <div class="members-activity">
-                <img src="images/Dawn.jpg" class="dawn-image">
-              <div class="dawn-comment">
-                <p>Dawn Wood</p>
-                <a href="#">dawn.wood16@example.com</a>
-              </div>
-            <p>10/15/15</p>
-          </div>
-
-          <div class="members-activity">
-                <img src="images/Dan.jpg" class="dan-image">
-              <div class="dan-comment">
-                <p>Dan Oliver</p>
-                <a href="#">dan.oliver82@example.com</a>
-              </div>
-            <p>10/15/15</p>
-          </div>
-          </section><!-- members-section -->
-  </div>
-
-  <div class="messageuser-container">
-    message user
-  </div>
-
-  <div class="settings-container">
-    settings
-  </div>
-
-</div> <!-- grid-container -->
+  </main>
+  
+</body>
 </html>
