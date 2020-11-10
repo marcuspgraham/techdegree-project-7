@@ -7,6 +7,10 @@
     
   }
 
+body {
+    font-family: 'Montserrat', sans-serif; 
+}
+
 /* ================================= 
   Header Styles
 ==================================== */
@@ -73,13 +77,21 @@ ul li {
   Socialstats Container Styles
 ==================================== */
 
-.twitter-image,
-.twitter-text {
-    display: block;
-    width: 70px;
-    border-radius: 50%;
-    margin-right: 10px;
+.socialstats-container {
+    display: flex;
+    justify-content: center;
 }
+
+.container {
+    display: flex
+    padding: 2rem;
+    width: 150px;
+    margin: 0.5rem;
+    background-color: #F2F2F2;
+    text-align: right;
+    position: relative;
+}
+
 
 
 
