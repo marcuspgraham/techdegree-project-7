@@ -1,4 +1,12 @@
 
+*,
+*:before,
+*:after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
 body {
     font-family: 'Montserrat', sans-serif; 
 }
@@ -57,6 +65,119 @@ h1 {
     height: 100%;
 } 
 
+.icons {
+    margin-right: 42px;
+}
+
+ul li {
+    display: inline-block;
+    width: 50px;
+    border-radius: 20%;
+    margin: 5px 5px;
+    padding: 5px 5px;
+    padding-top: 20px;
+    margin: 0;
+}
+
+
+/* ================================= 
+  Social stats
+==================================== */
+
+.socialheader {
+    margin-left: 20px;
+}
+
+.socialcontainers {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-between;
+    align-content: center;
+    margin-bottom: 30px;
+    border-bottom: 1px solid #000;
+}
+
+.social-image {
+    background-color: #fbfbfb;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 2em;
+    width: 300px;
+}
+
+.birdgraphic {
+    height: 10px;
+}
+
+.social svg {
+    background-color: #4d4d71;
+    border-radius: 200%;
+    display: inline-block;
+    fill: white;
+    float: left;
+    height: 50px;
+    margin-right: 20px;  
+    margin-bottom: 50px;
+    vertical-align: text-top;
+    width: 50px;    
+}
+
+.social__heading {
+    color: #7379bd;
+    display: block;
+    font-size: 125%;
+    font-weight: bold;
+    margin: 0;
+}
+
+.social__stats {
+    color: #7b7b7b;
+    font-size: 300%;
+    font-weight: 300;
+    line-height: 1px;
+    margin-bottom: 10px;
+}
+
+/* ================================= 
+  New members
+==================================== */
+
+.nmheader {
+    color: black;
+    display: block;
+    font-size: 150%;
+    font-weight: bold;
+    margin: 0;
+    margin-left: 5px;
+    margin-bottom: 20px;
+}
+
+
+.members {
+    display: block;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.members-container {
+    margin-bottom: 30px;
+    border-bottom: 1px solid #000;
+}
+
+.date {
+    float: right;
+}
+
+.members-text {
+    margin-bottom: 40px;
+}
+
+
+
+
 /* ================================= 
   Grid-container 
 ==================================== */
@@ -93,6 +214,14 @@ main {
         "header header"
         "nav main";
     }
+
+    .socialcontainers {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+    }
+
 }
 
 main {
