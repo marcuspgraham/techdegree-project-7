@@ -79,10 +79,77 @@ ul li {
     margin: 0;
 }
 
+/* ================================= 
+  Dashboard
+==================================== */
+
+
+.headline {
+    margin-left: 20px;;
+}
+
+.main-header-search {
+    float: right;
+}
+
+.traffic-nav {
+    float: right;
+}
+
+
+/* ================================= 
+  Traffic
+==================================== */
+
+.traffic {
+    display: inline-block;
+    line-height: 1em;
+    margin-right: 20px;
+}
+
+
+ul li {
+    margin-right: 20px;
+    font-weight: bold;
+}
+
+.trafficlinegraphheader {
+    display: inline-block;
+    margin-left: 20px;
+}
+
+.traffic {
+    border-bottom: 1px solid #000;
+}
+
+/* ================================= 
+  Daily traffic
+==================================== */
+
+
+.dailytrafficheader {
+    margin-left: 20px;
+}
+
+.daily {
+    border-right: 1px solid #000;
+}
+
+/* ================================= 
+  Mobile Users
+==================================== */
+
+.mobileheader {
+    margin-left: 20px;
+}
 
 /* ================================= 
   Social stats
 ==================================== */
+
+.social {
+    border-top: 1px solid #000;
+}
 
 .socialheader {
     margin-left: 20px;
@@ -103,7 +170,7 @@ ul li {
     border-radius: 5px;
     border: 1px solid #ddd;
     margin-top: 20px;
-    margin-bottom: 20px;
+    margin-bottom: 50px;
     padding: 2em;
     width: 300px;
 }
@@ -148,7 +215,7 @@ ul li {
 .nmheader {
     color: black;
     display: block;
-    font-size: 150%;
+    font-size: 125%;
     font-weight: bold;
     margin: 0;
     margin-left: 5px;
@@ -174,8 +241,6 @@ ul li {
 .members-text {
     margin-bottom: 40px;
 }
-
-
 
 
 /* ================================= 
@@ -204,7 +269,7 @@ nav {
 
 main {
     grid-area: main;
-    background: green;
+    /* background: green; */
 }
 
 @media (min-width: 768px) {
