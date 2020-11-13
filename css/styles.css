@@ -232,6 +232,7 @@ ul li {
 .members-container {
     margin-bottom: 30px;
     border-bottom: 1px solid #000;
+    border-right: 1px solid #000;
 }
 
 .date {
@@ -241,8 +242,7 @@ ul li {
 .members-text {
     margin-bottom: 40px;
 }
-
-
+x
 /* ================================= 
   Grid-container 
 ==================================== */
