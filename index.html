@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/toggle-switch-rem.css">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
   <title>Document</title>
 </head>
@@ -49,7 +50,7 @@
     <div class="main-header">
       <h2 class="headline">Dashboard</h2>
       <div class="main-header-search">
-        <input type="search" placeholder="Search..." />
+        <input type="search" class="form-field1" placeholder="Search..." />
       </div>
       </div>
 
@@ -197,67 +198,99 @@
 
     </section><!-- members -->
 
-      <!-- recent activity widget -->
-      
-      <section class="activity">
-        <h3>Recent Activity</h3>
-  
-        <div class="members-container">
-        <img src="images/Victoria.jpg"  alt="image of victoria" class="profile-image">
-        <div class="members-text">
-        <p>Victoria Chambers commented on YourApp's SEO Tips</p>
-        <p>4 hours ago</p>
-        </div>
-  
-        <div class="members-container">
-        <img src="images/Dale.jpg" alt="image of dale" class="profile-image">
-        <div class="members-text">
-        <p>Dale Byrd likes the post Facebook's Changes for 2016</p>
-        <p>5 hours ago</p>
-        </div>
-  
-        <div class="members-container">
-        <img src="images/Dawn.jpg" alt="image of dawn" class="profile-image">
-        <div class="members-text">
-        <p>Dawn Wood commented on Facbook's Changes for 2016</p>
-        <p>5 hours ago</p>
-        </div>
-  
-        <div class="members-container">
-        <img src="images/Dan.jpg" alt="image of dan" class="profile-image">
-        <div class="members-text">
-        <p>Dan Oliver posted YourApp's SEO Tips</p>
-        <p>1 day ago</p>
-        </div>
-  
-      </section><!-- activity -->
+    <section class="activity">
+      <h3 class="nmheader">Recent Activity</h3>
+
+      <div class="members-container">
+      <img src="images/Victoria.jpg"  alt="image of victoria" class="profile-image">
+      <div class="members-text">
+      <p>Victoria Chambers commented on YourApp's SEO Tips</p>
+      <p>4 hours ago</p>
+      </div>
+      </div>
+
+      <div class="members-container">
+      <img src="images/Dale.jpg" alt="image of dale" class="profile-image">
+      <div class="members-text">
+      <p>Dale Byrd likes the post Facebook's Changes for 2016</p>
+      <p>5 hours ago</p>
+      </div>
+      </div>
+
+      <div class="members-container">
+      <img src="images/Dawn.jpg" alt="image of dawn" class="profile-image">
+      <div class="members-text">
+      <p class="members-name">Dawn Wood commented on Facebook's Changes for 2016 </p>
+      <p>5 hours ago</p>
+      </div>
+      </div>
+
+      <div class="members-container">
+      <img src="images/Dan.jpg" alt="image of dan" class="profile-image">
+      <div class="members-text">
+      <p>Dan Oliver posted YourApp's SEO Tips</p>
+      <p>1 day ago</p>
+      </div>
+
+    </section><!-- activity -->
+
+
 
         <!-- messaging widget -->
         
         <section class="message">
-        <h3>Message User</h3>
+        <h3 class="message-header">Message User</h3>
         <form class="widget-container">
         <input type="text" placeholder="Search for user" class="form-field" id="userField">
         <textarea placeholder="Message for user" class="form-area" id= "messageField" ></textarea>
-        <button class="button-primary" id="send" >Send</button>
+        <button class="button-user" id="send" >Send</button>
         </form>
         </section> <!-- message -->
 
         <!-- local settings widget -->
         
         <section class="settings">
-        <h3>Settings</h3>
+        <h3 class="settings-header">Settings</h3>
 
         <!-- custom CSS toggle code-->
+
+        <label class="switch-light switch-candy" onclick="">
+          <input type="checkbox">
+        
+          <strong>
+            Send email notifications
+          </strong>
+        
+          <span>
+            <span>Off</span>
+            <span>On</span>
+            <a></a>
+          </span>
+        </label>
+
         <!-- custom CSS toggle code-->
 
-        <select class="form-field" id="timezone">
+        <label class="switch-light switch-candy" onclick="">
+          <input type="checkbox">
+        
+          <strong>
+            Set profile to public
+          </strong>
+        
+          <span>
+            <span>Off</span>
+            <span>On</span>
+            <a></a>
+          </span>
+        </label>
+
+        <select class="form-field2" id="timezone">
         <option disabled selected>Select a Timezone</option>
         <option>Eastern</option>
         <!-- more options -->
         </select>
         <div class="settings-button" >
-        <button class="button-primary" id="save">Save</button>
+        <button class="button-settings" id="save">Save</button>
         <button class="button-disabled" id="cancel">Cancel</button>
         </div>
         </section>

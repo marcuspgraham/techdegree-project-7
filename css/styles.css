@@ -38,7 +38,7 @@ h1 {
 
 .member-image {
     margin: 15px;
-    border-left: 1px solid #000;
+    border-left: 1px solid #ccc;
     margin-left: 15px;
     padding-left: 15px;
 }
@@ -52,6 +52,24 @@ h1 {
 .bell-icon {
     height: 30px;
 }
+
+/* ================================= 
+  Alert
+==================================== */
+
+.alert {
+    display: flex;
+    justify-content: space-between;
+    background-color: #7379bd;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    margin: 1em 1em 0;
+    padding: 0.5em;
+    position: relative;
+    text-align: left;
+}
+
 
 /* ================================= 
   Nav
@@ -79,21 +97,42 @@ ul li {
     margin: 0;
 }
 
+
 /* ================================= 
   Dashboard
 ==================================== */
 
 
-.headline {
-    margin-left: 20px;;
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    margin-right: 20px;
 }
+
+.headline {
+    margin-left: 20px;
+}
+
+
 
 .main-header-search {
-    float: right;
+    background-color: #eee;
+    border: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 1em;
+    width: 85%;
+    margin-left: 20px;
 }
 
-.traffic-nav {
+.form-field1 {
     float: right;
+    background-color: white;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    display: block;
+    margin: 1em 0;
+    padding: 1em;
+    width: 70%;
 }
 
 
@@ -108,10 +147,11 @@ ul li {
 }
 
 
-ul li {
+/* ul li {
     margin-right: 20px;
     font-weight: bold;
-}
+    float: right;
+} */
 
 .trafficlinegraphheader {
     display: inline-block;
@@ -119,7 +159,7 @@ ul li {
 }
 
 .traffic {
-    border-bottom: 1px solid #000;
+    border-bottom: 1px solid #ccc;
 }
 
 /* ================================= 
@@ -132,7 +172,7 @@ ul li {
 }
 
 .daily {
-    border-right: 1px solid #000;
+    border-right: 1px solid #ccc;
 }
 
 /* ================================= 
@@ -143,12 +183,17 @@ ul li {
     margin-left: 20px;
 }
 
+.mobile {
+    border-: 1px solid #ccc;
+}
+
+
 /* ================================= 
   Social stats
 ==================================== */
 
 .social {
-    border-top: 1px solid #000;
+    border-top: 1px solid #ccc;
 }
 
 .socialheader {
@@ -161,18 +206,18 @@ ul li {
     flex-direction: column;
     justify-content: space-between;
     align-content: center;
-    margin-bottom: 30px;
-    border-bottom: 1px solid #000;
+    border-bottom: 1px solid #ccc;
 }
 
 .social-image {
     background-color: #fbfbfb;
     border-radius: 5px;
     border: 1px solid #ddd;
+    margin: 20px 20px;
     margin-top: 20px;
     margin-bottom: 50px;
     padding: 2em;
-    width: 300px;
+    width: 400px;
 }
 
 .birdgraphic {
@@ -220,29 +265,155 @@ ul li {
     margin: 0;
     margin-left: 5px;
     margin-bottom: 20px;
+    margin-top: 20px;
 }
 
 
 .members {
     display: block;
     margin-left: 20px;
-    margin-right: 20px;
+    border-right: 1px solid #ccc;
 }
 
 .members-container {
     margin-bottom: 30px;
-    border-bottom: 1px solid #000;
-    border-right: 1px solid #000;
+    border-bottom: 1px solid #ccc;
+    margin-right: 20px;
+}
+
+.members-container:last-child {
+    border-bottom: 0;
 }
 
 .date {
     float: right;
+    margin-right: 10px;
 }
 
 .members-text {
     margin-bottom: 40px;
 }
-x
+
+.profile-image {
+    display: inline-block;
+    fill: white;
+    float: left;
+    height: 50px;
+    margin-right: 20px;  
+    margin-bottom: 50px;
+    vertical-align: text-top;
+    width: 50px;   
+}
+
+a {
+    text-decoration: none;
+    color: #7578BF;
+}
+
+p.date {
+    line-height: 1px;
+}
+
+
+/* ================================= 
+  Recent activity
+==================================== */
+
+.activity {
+    margin-left: 20px;
+}
+
+/* ================================= 
+  Message user
+==================================== */
+
+
+.mobileheader {
+    margin-left: 20px;
+}
+
+.form-field,
+.form-area {
+    background-color: #eee;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    display: block;
+    margin: 1em 0;
+    padding: 1em;
+    width: 90%;
+}
+
+.form-area {
+    height: 150px;
+}
+
+.message {
+    margin-left: 20px;
+    border-top: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+}
+
+.button-user {
+    background-color: #7379bd;
+    border-radius: 5px;
+    border: 0;
+    color: #fff;
+    margin: 0;
+    padding: 1em 2em;
+    text-transform: uppercase;
+    width: 90%;
+}
+
+/* ================================= 
+  Settings
+==================================== */
+
+.settings {
+    margin-bottom: 20px;
+    border-top: 1px solid #ccc;
+}
+
+.form-field2 {
+    background-color: #eee;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    display: block;
+    margin: 1em 0;
+    padding: 1em;
+    width: 90%;
+}
+
+.settings-header,
+.form-field2,
+.settings-button {
+    margin-left: 20px;
+}
+
+.button-settings,
+.button-disabled {
+    width: 46%;
+}
+
+.button-settings {
+    background-color: #7379bd;
+    border-radius: 5px;
+    border: 0;
+    color: #fff;
+    margin: 0;
+    padding: 1em 2em;
+    text-transform: uppercase;
+}
+
+.button-disabled {
+    background-color: #b2b2b2;
+    border-radius: 5px;
+    border: 0;
+    color: #fff;
+    margin: 0;
+    padding: 1em 2em;
+    text-transform: uppercase;
+}
+
 /* ================================= 
   Grid-container 
 ==================================== */
@@ -287,6 +458,8 @@ main {
         justify-content: space-evenly;
     }
 
+
+
 }
 
 main {
@@ -300,7 +473,7 @@ main {
 }
 
 @media (min-width: 768px) {
-    .traffic, .social {
+    .traffic, .main-header, .alert, .social {
         grid-column: 1 / span 2;
     }
 }
