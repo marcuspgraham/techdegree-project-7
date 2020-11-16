@@ -9,6 +9,7 @@
 
 body {
     font-family: 'Montserrat', sans-serif; 
+    color: #aaa;
 }
 
 
@@ -21,6 +22,7 @@ body {
 .member-image {
     display: flex;
     align-items: center;
+    margin-right: 20px;
 }
 
 .header-container {
@@ -43,7 +45,7 @@ h1 {
     padding-left: 15px;
 }
 
-.profile-image {
+.marcus-profile-image{
     width: 50px;
     border-radius: 50%;
     margin-right: 10px;
@@ -59,15 +61,16 @@ h1 {
 
 .alert {
     display: flex;
-    justify-content: space-between;
     background-color: #7379bd;
     border-radius: 5px;
     color: white;
-    cursor: pointer;
     margin: 1em 1em 0;
     padding: 0.5em;
-    position: relative;
     text-align: left;
+}
+
+.alert-banner p {
+    display: inline-block;
 }
 
 
@@ -87,7 +90,7 @@ h1 {
     margin-right: 42px;
 }
 
-ul li {
+nav ul li {
     display: inline-block;
     width: 50px;
     border-radius: 20%;
@@ -111,8 +114,8 @@ ul li {
 
 .headline {
     margin-left: 20px;
+    padding-top: 12px;
 }
-
 
 
 .main-header-search {
@@ -122,6 +125,8 @@ ul li {
     padding: 1em;
     width: 85%;
     margin-left: 20px;
+    position: relative;
+    bottom: 16px;
 }
 
 .form-field1 {
@@ -135,27 +140,43 @@ ul li {
     width: 70%;
 }
 
+input.form-field1 {
+    background-image: url(https://cdn2.hubspot.net/hubfs/4004166/bioticresearch_website_assets/images/search_icon.png);
+    background-repeat: no-repeat;
+    background-position: left center;
+    padding-left: 40px;
+}
+
+
 
 /* ================================= 
   Traffic
 ==================================== */
 
-.traffic {
+.traffic-nav {
+    float: right;
+    text-decoration: none;
+    list-style: none;
     display: inline-block;
-    line-height: 1em;
-    margin-right: 20px;
+}
+
+  
+.trafficlinegraphheader {
+    float: left;
+    display: inline-block;
 }
 
 
-/* ul li {
+ul li {
+    list-style: none;
     margin-right: 20px;
     font-weight: bold;
     float: right;
-} */
+}
 
 .trafficlinegraphheader {
-    display: inline-block;
     margin-left: 20px;
+    width: 50%;
 }
 
 .traffic {
@@ -430,7 +451,6 @@ p.date {
 
 header {
     grid-area: header;
-    background: maroon;
 }
 
 nav {
