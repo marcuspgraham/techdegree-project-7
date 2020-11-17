@@ -12,6 +12,10 @@ body {
     color: #aaa;
 }
 
+canvas {
+    max-width: 100%;
+}
+
 
 /* ================================= 
   Header 
@@ -65,12 +69,14 @@ h1 {
     border-radius: 5px;
     color: white;
     margin: 1em 1em 0;
+    margin-bottom: 20px;
     padding: 0.5em;
     text-align: left;
 }
 
 .alert-banner p {
     display: inline-block;
+    flex-grow: 1;
 }
 
 
@@ -160,8 +166,17 @@ input.form-field1 {
     display: inline-block;
 }
 
+.traffic-nav li:hover {
+    color: white;
+    background-color: #83c891;
+    border-radius: 1em;
+    font-weight: bold;
+    padding: 0 1em;
+}
   
 .trafficlinegraphheader {
+    font-weight: 500;
+    text-transform: uppercase;
     float: left;
     display: inline-block;
 }
@@ -189,6 +204,8 @@ ul li {
 
 
 .dailytrafficheader {
+    font-weight: 500;
+    text-transform: uppercase;
     margin-left: 20px;
 }
 
@@ -201,6 +218,8 @@ ul li {
 ==================================== */
 
 .mobileheader {
+    font-weight: 500;
+    text-transform: uppercase;
     margin-left: 20px;
 }
 
@@ -218,6 +237,8 @@ ul li {
 }
 
 .socialheader {
+    font-weight: 500;
+    text-transform: uppercase;
     margin-left: 20px;
 }
 
@@ -242,9 +263,6 @@ ul li {
     height: 170px;
 }
 
-.birdgraphic {
-    height: 10px;
-}
 
 .social svg {
     background-color: #7578BF;
@@ -276,15 +294,24 @@ ul li {
     margin-bottom: 10px;
 }
 
+.bg-svg {
+    padding-bottom: 20px;
+}
+
+.bg-svg1 {
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+
 /* ================================= 
   New members
 ==================================== */
 
 .nmheader {
-    color: black;
+    font-weight: 500;
+    text-transform: uppercase;
     display: block;
     font-size: 125%;
-    font-weight: bold;
     margin: 0;
     margin-left: 5px;
     margin-bottom: 20px;
@@ -353,6 +380,8 @@ p.date {
 
 
 .mobileheader {
+    font-weight: 500;
+    text-transform: uppercase;
     margin-left: 20px;
 }
 
@@ -404,7 +433,7 @@ p.date {
     display: block;
     margin: 1em 0;
     padding: 1em;
-    width: 90%;
+    width: 95%;
 }
 
 .settings-header,
@@ -415,7 +444,7 @@ p.date {
 
 .button-settings,
 .button-disabled {
-    width: 46%;
+    width: 48.5%;
 }
 
 .button-settings {
@@ -457,65 +486,59 @@ p.date {
 
 /* Toggles switches */
 
-.switch {
-    position: relative;
-    display: inline-block;
-    width: 60px;
-    height: 34px;
-  }
-  
-  .switch input { 
+.onoffswitch {
+    position: relative; width: 116px;
+    -webkit-user-select:none; -moz-user-select:none; -ms-user-select: none;
+}
+.onoffswitch-checkbox {
+    position: absolute;
     opacity: 0;
-    width: 0;
-    height: 0;
-  }
-  
-  .slider {
-    position: absolute;
-    cursor: pointer;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: #ccc;
-    -webkit-transition: .4s;
-    transition: .4s;
-  }
-  
-  .slider:before {
-    position: absolute;
-    content: "";
-    height: 26px;
-    width: 26px;
-    left: 4px;
-    bottom: 4px;
-    background-color: white;
-    -webkit-transition: .4s;
-    transition: .4s;
-  }
-  
-  input:checked + .slider {
-    background-color: #7578BF;
-  }
-  
-  input:focus + .slider {
-    box-shadow: 0 0 1px #7578BF;
-  }
-  
-  input:checked + .slider:before {
-    -webkit-transform: translateX(26px);
-    -ms-transform: translateX(26px);
-    transform: translateX(26px);
-  }
-  
-  /* Rounded sliders */
-  .slider.round {
-    border-radius: 34px;
-  }
-  
-  .slider.round:before {
-    border-radius: 50%;
-  }
+    pointer-events: none;
+}
+.onoffswitch-label {
+    display: block; overflow: hidden; cursor: pointer;
+    border: 2px solid #999999; border-radius: 21px;
+}
+.onoffswitch-inner {
+    display: block; width: 200%; margin-left: -100%;
+    transition: margin 0.3s ease-in 0s;
+}
+.onoffswitch-inner:before, .onoffswitch-inner:after {
+    display: block; float: left; width: 50%; height: 28px; padding: 0; line-height: 28px;
+    font-size: 19px; color: white; font-family: Trebuchet, Arial, sans-serif; font-weight: bold;
+    box-sizing: border-box;
+}
+.onoffswitch-inner:before {
+    content: "ON";
+    padding-left: 10px;
+    background-color: #7578BF; color: #FFFFFF;
+}
+.onoffswitch-inner:after {
+    content: "OFF";
+    padding-right: 10px;
+    background-color: #7578BF; color: #FFFFFF;
+    text-align: right;
+}
+.onoffswitch-switch {
+    display: block; width: 16px; margin: 6px;
+    background: #FCF7F7;
+    position: absolute; top: 0; bottom: 0;
+    right: 84px;
+    border: 2px solid #999999; border-radius: 21px;
+    transition: all 0.3s ease-in 0s; 
+}
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-inner {
+    margin-left: 0;
+}
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
+    right: 0px; 
+}
+
+.onoffswitch {
+    float: right;
+    margin-bottom: 20px;
+    margin-right: 20px;
+}
 
 /* ================================= 
   Grid-container 
