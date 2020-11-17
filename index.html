@@ -4,7 +4,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="css/styles.css">
-  <link rel="stylesheet" href="css/toggle-switch-rem.css">
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;500&display=swap" rel="stylesheet">
   <title>Document</title>
@@ -254,36 +253,35 @@
         <h3 class="settings-header">Settings</h3>
 
         <!-- custom CSS toggle code-->
+         
+        <div class="send-email">
+        <strong class="email">
+          Send email notifications
+        </strong>
 
-        <label class="switch-light switch-candy" onclick="">
+          <label class="switch">
           <input type="checkbox">
-        
-          <strong>
-            Send email notifications
+          <span class="slider round"></span>
+          </label>
+        </div>
+
+        <div class="profile-public">
+          <strong class="public">
+            Set profile to public
           </strong>
-        
-          <span>
-            <span>Off</span>
-            <span>On</span>
-            <a></a>
+
+          <label class="switch">
+          <input type="checkbox" checked>
+          <span class="slider round">
+            <span class="on">On</span>
+            <span class="off">Off</span>
           </span>
-        </label>
+          </label> 
+        </div>
 
         <!-- custom CSS toggle code-->
 
-        <label class="switch-light switch-candy" onclick="">
-          <input type="checkbox">
-        
-          <strong>
-            Set profile to public
-          </strong>
-        
-          <span>
-            <span>Off</span>
-            <span>On</span>
-            <a></a>
-          </span>
-        </label>
+
 
         <select class="form-field2" id="timezone">
         <option disabled selected>Select a Timezone</option>
