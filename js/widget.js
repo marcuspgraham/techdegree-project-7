@@ -54,6 +54,8 @@ let trafficChart = new Chart(trafficCanvas, {
 });
 
 
+
+
 // Bar Graph
 
 const dailyCanvas = document.getElementById("daily-chart");
