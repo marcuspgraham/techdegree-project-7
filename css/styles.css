@@ -75,9 +75,16 @@ h1 {
     animation-iteration-count: 1;
 }
 
+.bell-container{
+    position: relative;
+}
 
-.bell-container::before {
-    display: flex;
+
+.bell-container:before {
+    position: absolute;
+    right: 0;
+    top: 0;
+    /* display: flex; */
     background-color: limegreen;
     border-radius: 100%;
     content: ' ';
@@ -85,7 +92,6 @@ h1 {
     right: 0.75em;
     top: 0.75em;
     width: 7px;
-    position: relative;
 }
 
 /* ================================= 
@@ -102,6 +108,11 @@ h1 {
     margin-right: 20px;
     padding: 0.5em;
     text-align: left;
+}
+
+.alert-banner {
+    display: flex;
+    justify-content: space-between;
 }
 
 .alert-banner p {
