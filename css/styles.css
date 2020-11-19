@@ -67,15 +67,25 @@ h1 {
     margin-left: 40px;
 }
 
-.bell-container::after {
+.bell-icon:hover {
+    cursor: pointer;
+    -webkit-animation: swing 1s ease;
+    animation: swing 1s ease;
+    -webkit-animation-iteration-count: 1;
+    animation-iteration-count: 1;
+}
+
+
+.bell-container::before {
+    display: flex;
     background-color: limegreen;
     border-radius: 100%;
     content: ' ';
     height: 7px;
-    position: absolute;
     right: 0.75em;
     top: 0.75em;
     width: 7px;
+    position: relative;
 }
 
 /* ================================= 
@@ -375,7 +385,7 @@ ul li {
 
 .members-text {
     margin-bottom: 40px;
-    margin-right: 10px;
+    margin-right: 20px;
 }
 
 .profile-image {
@@ -411,6 +421,22 @@ p {
 
 .time {
     color: #7578BF;
+}
+
+.arrow-right {
+    border: solid #4D4F73;
+    border-width: 0 3px 3px 0;
+    padding-right: 5px;
+    display: inline-block;
+    padding: 10px;
+    float: right;
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+}
+
+
+.members-container .arrow-right {
+    margin-right: 20px;
 }
 
 /* ================================= 
@@ -696,5 +722,78 @@ main {
     }
     .widget-container-half {
         width: 45vw;
+    }
+}
+
+
+/* ================================= 
+  Keyframes 
+==================================== */
+
+
+@-webkit-keyframes swing
+{
+    15%
+    {
+        -webkit-transform: translateX(5px);
+        transform: translateX(5px);
+    }
+    30%
+    {
+        -webkit-transform: translateX(-5px);
+       transform: translateX(-5px);
+    } 
+    50%
+    {
+        -webkit-transform: translateX(3px);
+        transform: translateX(3px);
+    }
+    65%
+    {
+        -webkit-transform: translateX(-3px);
+        transform: translateX(-3px);
+    }
+    80%
+    {
+        -webkit-transform: translateX(2px);
+        transform: translateX(2px);
+    }
+    100%
+    {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+    }
+}
+@keyframes swing
+{
+    15%
+    {
+        -webkit-transform: translateX(5px);
+        transform: translateX(5px);
+    }
+    30%
+    {
+        -webkit-transform: translateX(-5px);
+        transform: translateX(-5px);
+    }
+    50%
+    {
+        -webkit-transform: translateX(3px);
+        transform: translateX(3px);
+    }
+    65%
+    {
+        -webkit-transform: translateX(-3px);
+        transform: translateX(-3px);
+    }
+    80%
+    {
+        -webkit-transform: translateX(2px);
+        transform: translateX(2px);
+    }
+    100%
+    {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
     }
 }
