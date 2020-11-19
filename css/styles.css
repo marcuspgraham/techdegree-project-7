@@ -7,7 +7,7 @@
   }
 
 body {
-    font-family: 'Montserrat', sans-serif; 
+    font-family: 'Montserrat', sans-serif;
     color: #aaa;
 }
 
@@ -39,6 +39,7 @@ canvas {
 }
 
 h1 {
+    font-weight: 200;
     margin: 0 auto 0 0;
 }
 
@@ -66,12 +67,23 @@ h1 {
     margin-left: 40px;
 }
 
+.bell-container::after {
+    background-color: limegreen;
+    border-radius: 100%;
+    content: ' ';
+    height: 7px;
+    position: absolute;
+    right: 0.75em;
+    top: 0.75em;
+    width: 7px;
+}
+
 /* ================================= 
   Alert
 ==================================== */
 
 .alert {
-    display: flex;
+    /* display: flex; */
     background-color: #7379bd;
     border-radius: 5px;
     color: white;
@@ -84,7 +96,7 @@ h1 {
 
 .alert-banner p {
     display: inline-block;
-    flex-grow: 1;
+    margin-bottom: 0;
 }
 
 
@@ -225,11 +237,12 @@ ul li {
 
 .daily {
     border-bottom: 1px solid #ccc;
-    margin-top: 20px;
+    padding-top: 20px;
 }
 
 .widget-container-half {
     margin-bottom: 30px;
+    margin-left: 10px;
 }
 
 /* ================================= 
@@ -383,8 +396,8 @@ a {
     color: #7578BF;
 }
 
-p.date {
-    /* line-height: 1px; */
+p {
+    margin-bottom: 5px;
 }
 
 
@@ -393,8 +406,11 @@ p.date {
 ==================================== */
 
 .activity {
-    /* margin-left: 20px; */
     border-bottom: 1px solid #ccc;
+}
+
+.time {
+    color: #7578BF;
 }
 
 /* ================================= 
@@ -425,10 +441,8 @@ p.date {
 
 .message {
     margin-bottom: 20px;
-    margin-top: 20px;
     margin-left: 10px;
-
-    /* border-right: 1px solid #ccc; */
+    padding-top: 20px;
 }
 
 .button-user {
@@ -444,8 +458,8 @@ p.date {
 }
 
 .widget-container {
-    border-bottom: 1px solid #ccc;}
-
+    border-bottom: 1px solid #ccc;
+}
 /* ================================= 
   Settings
 ==================================== */
@@ -611,7 +625,36 @@ main {
         justify-content: space-evenly;
     }
 
+    .traffic-nav {
+        padding-right: 20px;
+    }
 
+    .daily {
+        border-right: 1px solid #ccc;
+        margin-left: 20px;
+    }
+
+    .members {
+        border-right: 1px solid #ccc;
+    }
+
+    .message {
+        border-right: 1px solid #ccc;
+    }
+
+    .widget-container {
+        border-bottom: 0px;
+    }
+
+    .message-header,
+    .widget-container {
+        margin-left: 20px;
+    }
+
+    .settings {
+        padding-top: 20px;
+        margin-left: 20px;
+    }
 
 }
 
