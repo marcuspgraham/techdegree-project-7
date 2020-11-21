@@ -1,4 +1,8 @@
 
+/* ================================= 
+  Base Element Styles
+==================================== */
+
 * { 
     box-sizing: border-box;
     margin-right: 0;
@@ -14,6 +18,7 @@ body {
 canvas {
     max-width: 100%;
 }
+
 
 
 /* ================================= 
@@ -62,6 +67,7 @@ h1 {
     margin-right: 10px;
 }
 
+
 .bell-icon {
     height: 30px;
     margin-left: 40px;
@@ -84,13 +90,10 @@ h1 {
     position: absolute;
     right: 0;
     top: 0;
-    /* display: flex; */
     background-color: limegreen;
     border-radius: 100%;
     content: ' ';
     height: 7px;
-    right: 0.75em;
-    top: 0.75em;
     width: 7px;
 }
 
@@ -117,6 +120,7 @@ h1 {
 
 .alert-banner p {
     display: inline-block;
+    cursor: pointer;
     margin-bottom: 0;
 }
 
@@ -134,7 +138,7 @@ h1 {
 } 
 
 .icons {
-    margin-right: 42px;
+    margin-right: 3px;
 }
 
 nav ul li {
@@ -155,6 +159,7 @@ nav ul li {
 
 .main-header {
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
 }
 
