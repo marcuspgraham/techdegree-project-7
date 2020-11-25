@@ -262,11 +262,11 @@
         
         <section class="message">
         <h3 class="message-header">Message User</h3>
-        <form class="widget-container">
-        <input type="text" placeholder="Search for user" class="form-field" id="userField">
-        <textarea placeholder="Message for user" class="form-area" id= "messageField" ></textarea>
-        <button class="button-user" id="send" >Send</button>
-        </form>
+          <form class="widget-container" autocomplete="off" action="/action_page.php">
+            <input type="text" id="myInput" placeholder="Search for user" name="names" class="form-field">
+            <textarea placeholder="Message for user" class="form-area" id="messageField"></textarea>
+            <button class="button-user" id="send">Send</button>
+          </form>
         </section> <!-- message -->
 
         <!-- local settings widget -->
