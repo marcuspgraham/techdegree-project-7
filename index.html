@@ -81,10 +81,10 @@
     <div class="traffic-header">
       <h3 class="trafficlinegraphheader">Traffic</h3>
         <ul class="traffic-nav">
-        <li class="traffic-nav-link">Hourly</li>
-        <li class="traffic-nav-link">Daily</li>
-        <li class="traffic-nav-link active">Weekly</li>
-        <li class="traffic-nav-link">Monthly</li>
+        <li class="traffic-nav-link"><a href id="btn1">Hourly</a></li>
+        <li class="traffic-nav-link"><a href id="btn2">Daily</a></li>
+        <li class="traffic-nav-link active"><a href id="btn3">Weekly</a></li>
+        <li class="traffic-nav-link"><a href id="btn4">Monthly</a></li>
       </ul>
       </div>
       <div class="widget-container-full">
@@ -263,7 +263,9 @@
         <section class="message">
         <h3 class="message-header">Message User</h3>
           <form class="widget-container" autocomplete="off" action="/action_page.php">
+            <div class="autocomplete">
             <input type="text" id="myInput" placeholder="Search for user" name="names" class="form-field">
+            </div>
             <textarea placeholder="Message for user" class="form-area" id="messageField"></textarea>
             <button class="button-user" id="send">Send</button>
           </form>
@@ -326,5 +328,7 @@
   </main>
   <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
   <script type="text/javascript" src="js/widget.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.min.js"></script>
 </body>
 </html>

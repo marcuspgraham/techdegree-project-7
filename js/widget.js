@@ -29,9 +29,14 @@ let trafficData = {
         datasets: [{
         data: [750, 1250, 1000, 2000, 1500, 1750, 1250, 1850, 2250, 2000, 2500],
         backgroundColor: 'rgba(116, 119, 191, .3)',
-        borderWidth: 1,
+        borderWidth: 2,
     }]
 };
+
+function addData(data) {
+  trafficData.datasets[0].data[4] = 1750;
+  trafficData.update();
+}
 
 let trafficOptions = {
     aspectRatio: 2.5,
@@ -50,13 +55,12 @@ let trafficOptions = {
     }
 };
 
+
 let trafficChart = new Chart(trafficCanvas, {
         type: 'line',
         data: trafficData,
         options: trafficOptions
 });
-
-
 
 
 // Bar Graph
@@ -276,7 +280,7 @@ function autocomplete(inp, arr) {
   }
   
   /*An array containing all the country names in the world:*/
-  var names = ["Victoria", "Dale", "Dawn", "Dan", "Justin", "Tony", "Christine", "Annabelle", "Chris", "Adam", "Bianca", "Brian", "Mark", "Ken", "Toby", "Mikel", "Louise", "Tate", "Christine"];
+  var names = ["Victoria", "Dale", "Dawn", "Dan", "Justin", "Tony", "Christine", "Annabelle", "Chris", "Adam", "Bianca", "Brian", "Mark", "Ken", "Toby", "Mikel", "Louise", "Tate", "Christine", "Mick", "Tina", "Ricky", "Anthony", "Tabby", "Jacob", "Peter"];
   
   /*initiate the autocomplete function on the "myInput" element, and pass along the names array as possible autocomplete values:*/
   autocomplete(document.getElementById("myInput"), names);
