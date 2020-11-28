@@ -18,25 +18,73 @@ alertBanner.addEventListener('click', e => {
     }
 });
 
-
-
 // Line Graph
 
 let trafficCanvas = document.getElementById("traffic-chart");
 
 let trafficData = {
-        labels: ["16-22", "23-29", "30-5", "6-12", "13-19", "20-26", "27-3","4-10", "11-17", "18-24", "25-31"],
+        labels: ["16-22", "23-29", "30-5", "6-12", "13-19", "20-26", "27-3","4-10", "11-17", "18-24", "25-31", "32-38"],
         datasets: [{
-        data: [750, 1250, 1000, 2000, 1500, 1750, 1250, 1850, 2250, 2000, 2500],
+        data: [750, 1250, 1000, 2000, 1500, 1750, 1250, 1850, 2250, 2000, 2500, 3000],
         backgroundColor: 'rgba(116, 119, 191, .3)',
-        borderWidth: 2,
+        borderWidth: 1,
     }]
 };
 
-function addData(data) {
-  trafficData.datasets[0].data[4] = 1750;
-  trafficData.update();
-}
+let trafficMonthly = {
+        labels: ["Jan", "Feb", "Mar", "Apr", "May", "June,", "July", "Aug", "Sept", "Oct", "Nov", "Dec"],
+        datasets: [{
+        data: [250, 5350, 2300, 1000, 1500, 1750, 1250, 1850, 2250, 2000, 2500, 3000]
+    }]
+};
+
+document.querySelector('#btn4').addEventListener('click', e => {
+  e.preventDefault();  // prevent browser from reloading
+  trafficChart.data = trafficMonthly; // set new data object
+  trafficChart.update(); // update the chart
+});
+
+let trafficWeekly = {
+      labels: ["Week1", "Week2", "Week3", "Week4", "Week5", "Week6", "Week7", "Week8", "Week9", "Week10"],
+      datasets: [{
+      data: [550, 950, 1250, 2050, 3000, 4350, 300, 2000, 500, 150, 1450]
+    }]
+};
+
+document.querySelector('#btn3').addEventListener('click', e => {
+  e.preventDefault();  // prevent browser from reloading
+  trafficChart.data = trafficWeekly; // set new data object
+  trafficChart.update(); // update the chart
+});
+
+let trafficDaily = {
+  labels: ["Mon", "Tues", "Weds", "Thurs", "Fri", "Sat", "Sun"],
+  datasets: [{
+  data: [550, 950, 1250, 2050, 3000, 4350, 5000]
+}]
+};
+
+document.querySelector('#btn2').addEventListener('click', e => {
+  e.preventDefault();  // prevent browser from reloading
+  trafficChart.data = trafficDaily; // set new data object
+  trafficChart.update(); // update the chart
+});
+
+
+let trafficHourly = {
+  labels: ["9am", "12pm", "3pm", "6pm", "9pm", "12am"],
+  datasets: [{
+  data: [900, 2000, 2150, 1000, 4050, 2500]
+}]
+};
+
+document.querySelector('#btn1').addEventListener('click', e => {
+  e.preventDefault();  // prevent browser from reloading
+  trafficChart.data = trafficHourly; // set new data object
+  trafficChart.update(); // update the chart
+});
+
+
 
 let trafficOptions = {
     aspectRatio: 2.5,
@@ -284,3 +332,69 @@ function autocomplete(inp, arr) {
   
   /*initiate the autocomplete function on the "myInput" element, and pass along the names array as possible autocomplete values:*/
   autocomplete(document.getElementById("myInput"), names);
+
+
+// Local storage
+
+// Local Storage Saved Settings //
+
+const sendEmailToggle = document.querySelector('#myonoffswitch');
+const setProfileToggle = document.querySelector('#myonoffswitch1');
+const selectTimezoneSelect = document.querySelector('#timezone')
+
+// Check if localStorage is available
+
+function testStorage() {
+  const test = 'test';
+   try {
+     localStorage.setItem(test, test);
+     localStorage.removeItem(test);
+     return true;
+    } catch(e) {
+      return false;
+  }  
+}
+
+// Runs function if localStorage is enabled
+
+if (testStorage() === true) {
+
+  document.querySelector("#save").addEventListener("click", () => {
+    localStorage.setItem('emailNotification', sendEmailToggle.checked);
+    localStorage.setItem('profilePublic', setProfileToggle.checked);
+    alert("Settings Successfully Saved!");
+  });
+
+  // Send all settings back to default values when cancel pushed
+
+  document.querySelector("#cancel").addEventListener("click", () => {
+    const cancel = confirm('Are you sure you want to cancel changes?');
+    if (cancel) {
+      localStorage.setItem('emailNotification', sendEmailToggle.checked = null);
+      localStorage.setItem('profilePublic', setProfileToggle.checked = null);
+    };
+  }); 
+
+
+  document.querySelector('#timezone').addEventListener("click", () => {
+    localStorage.setItem('timeZoneSelectedValue', selectTimezoneSelect.value = 'Pacific');
+    localStorage.setItem('timeZoneSelectedValue', selectTimezoneSelect.value = 'Mountain');
+    localStorage.setItem('timeZoneSelectedValue', selectTimezoneSelect.value = 'Central');
+    localStorage.setItem('timeZoneSelectedValue', selectTimezoneSelect.value = 'Eastern');
+  });
+}
+
+  document.querySelector("#cancel").addEventListener("click", () => {
+    const cancel = confirm('Are you sure you want to cancel changes?');
+    if (cancel) {
+      localStorage.setItem('timeZoneSelectedValue', selectTimezoneSelect.value = 'Pacific');
+      localStorage.setItem('timeZoneSelectedValue', selectTimezoneSelect.value = 'Mountain');
+      localStorage.setItem('timeZoneSelectedValue', selectTimezoneSelect.value = 'Central');
+      localStorage.setItem('timeZoneSelectedValue', selectTimezoneSelect.value = 'Eastern');
+    };
+  }); 
+
+
+sendEmailToggle.checked = JSON.parse(localStorage.getItem('emailNotification'));
+setProfileToggle.checked = JSON.parse(localStorage.getItem('profilePublic'));
+document.querySelector('#timezone').value = localStorage.getItem('timeZoneSelectedValue');
