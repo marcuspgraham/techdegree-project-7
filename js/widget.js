@@ -338,9 +338,10 @@ function autocomplete(inp, arr) {
 
 // Local Storage Saved Settings //
 
+const searchForUser = document.querySelector('#myInput');
 const sendEmailToggle = document.querySelector('#myonoffswitch');
 const setProfileToggle = document.querySelector('#myonoffswitch1');
-const selectTimezoneSelect = document.querySelector('#timezone')
+const selectTimezoneSelect = document.querySelector('#timezone');
 
 // Check if localStorage is available
 
@@ -360,12 +361,12 @@ function testStorage() {
 if (testStorage() === true) {
 
   document.querySelector("#save").addEventListener("click", () => {
+    localStorage.setItem('searchUser', searchForUser.value);
     localStorage.setItem('emailNotification', sendEmailToggle.checked);
     localStorage.setItem('profilePublic', setProfileToggle.checked);
     alert("Settings Successfully Saved!");
   });
 
-  // Send all settings back to default values when cancel pushed
 
   document.querySelector("#cancel").addEventListener("click", () => {
     const cancel = confirm('Are you sure you want to cancel changes?');
@@ -387,14 +388,15 @@ if (testStorage() === true) {
   document.querySelector("#cancel").addEventListener("click", () => {
     const cancel = confirm('Are you sure you want to cancel changes?');
     if (cancel) {
-      localStorage.setItem('timeZoneSelectedValue', selectTimezoneSelect.value = 'Pacific');
-      localStorage.setItem('timeZoneSelectedValue', selectTimezoneSelect.value = 'Mountain');
-      localStorage.setItem('timeZoneSelectedValue', selectTimezoneSelect.value = 'Central');
-      localStorage.setItem('timeZoneSelectedValue', selectTimezoneSelect.value = 'Eastern');
+      localStorage.setItem('timeZoneSelectedValue', selectTimezoneSelect.value = null);
+      localStorage.setItem('timeZoneSelectedValue', selectTimezoneSelect.value = null);
+      localStorage.setItem('timeZoneSelectedValue', selectTimezoneSelect.value = null);
+      localStorage.setItem('timeZoneSelectedValue', selectTimezoneSelect.value = null);
     };
   }); 
 
 
+searchForUser.value = JSON.parse(localStorage.getItem('searchUser'));
 sendEmailToggle.checked = JSON.parse(localStorage.getItem('emailNotification'));
 setProfileToggle.checked = JSON.parse(localStorage.getItem('profilePublic'));
 document.querySelector('#timezone').value = localStorage.getItem('timeZoneSelectedValue');
