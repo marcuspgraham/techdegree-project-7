@@ -599,10 +599,12 @@ body {
     padding: 10px;
     font-size: 16px;
   }
+  
   input[type=text] {
     background-color: #f1f1f1;
     width: 130%;
   }
+
   input[type=submit] {
     background-color: DodgerBlue;
     color: #fff;
@@ -950,7 +952,7 @@ main {
     }
 
     #myInput {
-        width: 225%;
+        width: 211%;
     }
 }
 

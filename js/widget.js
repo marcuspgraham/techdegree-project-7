@@ -179,6 +179,7 @@ let mobileChart = new Chart(mobileCanvas, {
     options: mobileOptions
 });    
 
+
 // Messaging Section
 
 const user = document.getElementById("userField");
@@ -334,16 +335,11 @@ function autocomplete(inp, arr) {
   autocomplete(document.getElementById("myInput"), names);
 
 
-// Local storage
-
 // Local Storage Saved Settings //
 
-const searchForUser = document.querySelector('#myInput');
-const sendEmailToggle = document.querySelector('#myonoffswitch');
-const setProfileToggle = document.querySelector('#myonoffswitch1');
-const selectTimezoneSelect = document.querySelector('#timezone');
-
-// Check if localStorage is available
+const emailToggle = document.querySelector('#myonoffswitch');
+const profileToggle = document.querySelector('#myonoffswitch1');
+const timezoneSelect = document.querySelector('#timezone');
 
 function testStorage() {
   const test = 'test';
@@ -356,47 +352,42 @@ function testStorage() {
   }  
 }
 
-// Runs function if localStorage is enabled
-
 if (testStorage() === true) {
 
   document.querySelector("#save").addEventListener("click", () => {
-    localStorage.setItem('searchUser', searchForUser.value);
-    localStorage.setItem('emailNotification', sendEmailToggle.checked);
-    localStorage.setItem('profilePublic', setProfileToggle.checked);
+    localStorage.setItem('emailNotification', emailToggle.checked);
+    localStorage.setItem('profilePublic', profileToggle.checked);
+    localStorage.setItem('myTimeZoneSelectedValue', timezoneSelect.value);
     alert("Settings Successfully Saved!");
   });
 
-
   document.querySelector("#cancel").addEventListener("click", () => {
     const cancel = confirm('Are you sure you want to cancel changes?');
     if (cancel) {
-      localStorage.setItem('emailNotification', sendEmailToggle.checked = null);
-      localStorage.setItem('profilePublic', setProfileToggle.checked = null);
+      localStorage.setItem('emailNotification', emailToggle.checked = null);
+      localStorage.setItem('profilePublic', profileToggle.checked = null);
     };
   }); 
-
 
   document.querySelector('#timezone').addEventListener("click", () => {
-    localStorage.setItem('timeZoneSelectedValue', selectTimezoneSelect.value = 'Pacific');
-    localStorage.setItem('timeZoneSelectedValue', selectTimezoneSelect.value = 'Mountain');
-    localStorage.setItem('timeZoneSelectedValue', selectTimezoneSelect.value = 'Central');
-    localStorage.setItem('timeZoneSelectedValue', selectTimezoneSelect.value = 'Eastern');
+    localStorage.setItem('myTimeZoneSelectedValue', 'Pacific');
+    localStorage.setItem('myTimeZoneSelectedValue', 'Mountain');
+    localStorage.setItem('myTimeZoneSelectedValue', 'Central');
+    localStorage.setItem('myTimeZoneSelectedValue', 'Eastern');
   });
-}
 
   document.querySelector("#cancel").addEventListener("click", () => {
     const cancel = confirm('Are you sure you want to cancel changes?');
     if (cancel) {
-      localStorage.setItem('timeZoneSelectedValue', selectTimezoneSelect.value = null);
-      localStorage.setItem('timeZoneSelectedValue', selectTimezoneSelect.value = null);
-      localStorage.setItem('timeZoneSelectedValue', selectTimezoneSelect.value = null);
-      localStorage.setItem('timeZoneSelectedValue', selectTimezoneSelect.value = null);
+      localStorage.removeItem('myTimeZoneSelectedValue', 'Pacific');
+      localStorage.removeItem('myTimeZoneSelectedValue', 'Mountain');
+      localStorage.removeItem('myTimeZoneSelectedValue', 'Central');
+      localStorage.removeItem('myTimeZoneSelectedValue', 'Eastern');
     };
   }); 
 
+}
 
-searchForUser.value = JSON.parse(localStorage.getItem('searchUser'));
-sendEmailToggle.checked = JSON.parse(localStorage.getItem('emailNotification'));
-setProfileToggle.checked = JSON.parse(localStorage.getItem('profilePublic'));
-document.querySelector('#timezone').value = localStorage.getItem('timeZoneSelectedValue');
+emailToggle.checked = JSON.parse(localStorage.getItem('emailNotification'));
+profileToggle.checked = JSON.parse(localStorage.getItem('profilePublic'));
+document.querySelector('#timezone').value = localStorage.getItem('myTimeZoneSelectedValue');
