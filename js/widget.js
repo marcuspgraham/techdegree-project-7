@@ -183,8 +183,8 @@ let mobileChart = new Chart(mobileCanvas, {
 // Messaging Section
 
 const user = document.getElementById("userField");
-const message = document.getElementById("messageField");
-const send = document.getElementById("send");
+const message = document.querySelector("#messageField");
+const send = document.querySelector("#send");
 
 send.addEventListener('click', () => {
     // ensure user and message fields are filled out
@@ -379,10 +379,11 @@ if (testStorage() === true) {
   document.querySelector("#cancel").addEventListener("click", () => {
     const cancel = confirm('Are you sure you want to cancel changes?');
     if (cancel) {
-      localStorage.removeItem('myTimeZoneSelectedValue', 'Pacific');
-      localStorage.removeItem('myTimeZoneSelectedValue', 'Mountain');
-      localStorage.removeItem('myTimeZoneSelectedValue', 'Central');
-      localStorage.removeItem('myTimeZoneSelectedValue', 'Eastern');
+      document.querySelector('#timezone').selectedIndex = 0;
+      // localStorage.removeItem('myTimeZoneSelectedValue', 'Pacific');
+      // localStorage.removeItem('myTimeZoneSelectedValue', 'Mountain');
+      // localStorage.removeItem('myTimeZoneSelectedValue', 'Central');
+      // localStorage.removeItem('myTimeZoneSelectedValue', 'Eastern');
     };
   }); 
 
