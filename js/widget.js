@@ -217,10 +217,19 @@ btn.addEventListener('click', event => {
     event.preventDefault();
 });
 
+
 // When the user clicks on <span> (x), close the modal
-span.onclick = function() {
-  modal.style.display = "none";
-};
+
+var close = document.getElementsByClassName("close");
+var i;
+
+for (i = 0; i < close.length; i++) {
+  close[i].onclick = function(){
+    var div = this.parentElement;
+    div.style.opacity = "0";
+    setTimeout(function(){ div.style.display = "none"; }, 600);
+  }
+}
 
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
@@ -228,6 +237,7 @@ window.onclick = function(event) {
     modal.style.display = "none";
   }
 };
+
 
 // autocomplete
 
@@ -329,7 +339,7 @@ function autocomplete(inp, arr) {
   }
   
   /*An array containing all the country names in the world:*/
-  var names = ["Victoria", "Dale", "Dawn", "Dan", "Justin", "Tony", "Christine", "Annabelle", "Chris", "Adam", "Bianca", "Brian", "Mark", "Ken", "Toby", "Mikel", "Louise", "Tate", "Christine", "Mick", "Tina", "Ricky", "Anthony", "Tabby", "Jacob", "Peter"];
+  var names = ["Victoria Kimble", "Dale Johnson", "Dawn Graham", "Dan Sherwood", "Justin Timberlake", "Tony Soprano", "Christine Blekley", "Annabelle Watts", "Chris Pratt", "Adam Soyer", "Bianca Gascoigne", "Brian May", "Mark Walhberg", "Ken Dodd", "Toby McGuire", "Mikel Bakk", "Louise Bennett", "Tate Dawson", "Dalton John", "Mick Malley", "Tina O'Brian", "Ricky Stewart", "Anthony Watson", "Tabby Smith", "Jacob Johnson", "Peter Davidson", "Wade Garrett"];
   
   /*initiate the autocomplete function on the "myInput" element, and pass along the names array as possible autocomplete values:*/
   autocomplete(document.getElementById("myInput"), names);
@@ -380,10 +390,7 @@ if (testStorage() === true) {
     const cancel = confirm('Are you sure you want to cancel changes?');
     if (cancel) {
       document.querySelector('#timezone').selectedIndex = 0;
-      // localStorage.removeItem('myTimeZoneSelectedValue', 'Pacific');
-      // localStorage.removeItem('myTimeZoneSelectedValue', 'Mountain');
-      // localStorage.removeItem('myTimeZoneSelectedValue', 'Central');
-      // localStorage.removeItem('myTimeZoneSelectedValue', 'Eastern');
+      localStorage.removeItem('myTimeZoneSelectedValue');
     }
   }); 
 
