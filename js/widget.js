@@ -217,8 +217,10 @@ btn.addEventListener('click', event => {
     event.preventDefault();
 });
 
-
 // When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
 
 var close = document.getElementsByClassName("close");
 var i;
@@ -229,6 +231,10 @@ for (i = 0; i < close.length; i++) {
     div.style.opacity = "0";
     setTimeout(function(){ div.style.display = "none"; }, 600);
   }
+}
+
+span.onclick = function() {
+  modal.style.display = "none";
 }
 
 // When the user clicks anywhere outside of the modal, close it
@@ -390,7 +396,6 @@ if (testStorage() === true) {
     const cancel = confirm('Are you sure you want to cancel changes?');
     if (cancel) {
       document.querySelector('#timezone').selectedIndex = 0;
-      localStorage.removeItem('myTimeZoneSelectedValue');
     }
   }); 
 
