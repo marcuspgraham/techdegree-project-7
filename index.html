@@ -17,7 +17,7 @@
     <div class="header-container">
     <h1><strong>Your</strong>App<sup>™</sup></h1>
       <div class="bell-container">
-        <a href class="account_notify">
+        <a class="account_notify">
         <img id="myBtn" class="bell-icon" src="icons/icon-bell.svg" alt="bell icon">
         </a>
         <div class="notifications">
@@ -30,7 +30,7 @@
           <div class="modal-content">
             <span class="close">&times;</span>
             <p>You have 1 new message</p>
-            <p>You have 1 new message</p>
+            <p>You have 2 new messages</p>
           </div>
 
           </div>
@@ -47,18 +47,15 @@
   <nav>
     <div class="navigation-container">
       <ul class="icons">
-      <a ref="#">
-        <li><img src="icons/icon-dashboard.svg" alt="Image of Calculator" class="calculator"></li>
-      </a>
-      <a ref="#">
-        <li><img src="icons/icon-members.svg" alt="Image of Person" class="person"></li>
-      </a>
-      <a ref="#">
-        <li><img src="icons/icon-visits.svg" alt="Image of Graph" class="graph"></li>
-      </a>
-      <a ref="#">
-        <li><img src="icons/icon-settings.svg" alt="Image of Sliders" class="sliders"></li>
-      </a>
+      
+        <li><a><img src="icons/icon-dashboard.svg" alt="Image of Calculator" class="calculator"></a></li>
+      
+        <li><a><img src="icons/icon-members.svg" alt="Image of Person" class="person"></a></li>
+
+        <li><a><img src="icons/icon-visits.svg" alt="Image of Graph" class="graph"></a></li>
+    
+        <li><a><img src="icons/icon-settings.svg" alt="Image of Sliders" class="sliders"></a></li>
+    
     </ul>
     </div>
   </nav>
@@ -81,15 +78,15 @@
     <div class="traffic-header">
       <h3 class="trafficlinegraphheader">Traffic</h3>
         <ul class="traffic-nav">
-        <li class="traffic-nav-link"><a href id="btn1">Hourly</a></li>
-        <li class="traffic-nav-link"><a href id="btn2">Daily</a></li>
-        <li class="traffic-nav-link active"><a href id="btn3">Weekly</a></li>
-        <li class="traffic-nav-link"><a href id="btn4">Monthly</a></li>
+        <li class="traffic-nav-link"><a id="btn1">Hourly</a></li>
+        <li class="traffic-nav-link"><a id="btn2">Daily</a></li>
+        <li class="traffic-nav-link active"><a id="btn3">Weekly</a></li>
+        <li class="traffic-nav-link"><a id="btn4">Monthly</a></li>
       </ul>
       </div>
       <div class="widget-container-full">
       <!-- element line graph will attach to -->
-      <canvas id="traffic-chart" width="300" height="200" style="relative"></canvas>
+      <canvas id="traffic-chart" width="300" height="200"></canvas>
     </div>
     </section>
 
@@ -130,9 +127,8 @@
       </div><!-- social-image -->
 
 
-      <div class="social-image"
-      inline SVG not included for brevity -->
-        <svg class="bg-svg" enable-background="new 0 0 20 56.693" height="100" id="Layer_1" version="1.1" viewBox="2 -5 56.693 56.693" width="auto" 
+      <div class="social-image">
+        <svg class="bg-svg" enable-background="new 0 0 20 56.693" height="100" id="Layer_2" version="1.1" viewBox="2 -5 56.693 56.693" width="auto" 
         xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
         <path fill="white" d="M40.43,21.739h-7.645v-5.014c0-1.883,1.248-2.322,2.127-2.322c0.877,0,5.395,0,5.395,0V6.125l-7.43-0.029  
         c-8.248,0-10.125,6.174-10.125,10.125v5.518h-4.77v8.53h4.77c0,10.947,0,24.137,0,24.137h10.033c0,0,0-13.32,0-24.137h6.77  L40.43,21.739z"/>
@@ -143,9 +139,8 @@
       </div><!-- facebook-text -->
       </div><!-- social-image -->
 
-      <div class="social-image"
-      inline SVG not included for brevity -->
-        <svg class="bg-svg1" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+      <div class="social-image">
+        <svg class="bg-svg1" version="1.1" id="Layer_3" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
         viewBox="0 0 32 32" style="enable-background:new 0 0 32 32;" xml:space="preserve">
         <path fill="white" d="M17.7,25.7c0-0.3,0-0.5-0.1-0.8c-0.1-0.2-0.1-0.5-0.2-0.7c-0.1-0.2-0.2-0.4-0.3-0.7c-0.2-0.2-0.3-0.4-0.4-0.6
         c-0.1-0.2-0.3-0.3-0.5-0.6c-0.2-0.2-0.4-0.4-0.5-0.5c-0.1-0.1-0.3-0.3-0.6-0.5c-0.3-0.2-0.5-0.4-0.6-0.4s-0.3-0.2-0.6-0.4
@@ -179,79 +174,80 @@
       <h3 class="nmheader">New Members</h3>
 
       <div class="members-container">
-      <img src="images/Victoria.jpg"  alt="image of victoria" class="profile-image">
-      <div class="members-text">
-      <p>Victoria Chambers</p>
-      <a href="#">victoria.chambers80@example.com</a>
-      <p class="date">10/15/15</p>
-      </div>
-      </div>
-
-      <div class="members-container">
-      <img src="images/Dale.jpg" alt="image of dale" class="profile-image">
-      <div class="members-text">
-      <p>Dale Byrd</p>
-      <a href="#">dale.bryd52@example.com</a>
-      <p class="date">10/15/15</p>
-      </div>
+        <img src="images/Victoria.jpg"  alt="image of victoria" class="profile-image">
+        <div class="members-text">
+        <p>Victoria Chambers</p>
+        <a href="#">victoria.chambers80@example.com</a>
+        <p class="date">10/15/15</p>
+        </div>
       </div>
 
       <div class="members-container">
-      <img src="images/Dawn.jpg" alt="image of dawn" class="profile-image">
-      <div class="members-text">
-      <p class="members-name">Dawn Wood</p>
-      <a href="#">dawn.wood16@example.com</a>
-      <p class="date">10/15/15</p>
-      </div>
+        <img src="images/Dale.jpg" alt="image of dale" class="profile-image">
+        <div class="members-text">
+        <p>Dale Byrd</p>
+        <a href="#">dale.bryd52@example.com</a>
+        <p class="date">10/15/15</p>
+        </div>
       </div>
 
       <div class="members-container">
-      <img src="images/Dan.jpg" alt="image of dan" class="profile-image">
-      <div class="members-text">
-      <p>Dan Oliver</p>
-      <a href="#">dan.oliver82@example.com</a>
-      <p class="date">10/15/15</p>
+        <img src="images/Dawn.jpg" alt="image of dawn" class="profile-image">
+        <div class="members-text">
+        <p class="members-name">Dawn Wood</p>
+        <a href="#">dawn.wood16@example.com</a>
+        <p class="date">10/15/15</p>
+        </div>
       </div>
 
-    </section><!-- members -->
+      <div class="members-container">
+        <img src="images/Dan.jpg" alt="image of dan" class="profile-image">
+        <div class="members-text">
+        <p>Dan Oliver</p>
+        <a href="#">dan.oliver82@example.com</a>
+        <p class="date">10/15/15</p>
+        </div>
+      </div>
+
+      </section><!-- members -->
 
     <section class="activity">
       <h3 class="nmheader">Recent Activity</h3>
 
       <div class="members-container">
-      <img src="images/Victoria.jpg"  alt="image of victoria" class="profile-image">
-      <div class="members-text">
-      <p class="activity-comment">Victoria Chambers commented <br>on YourApp's SEO Tips</p>
-      <p class="time">4 hours ago</p>
-      <i class="arrow-right"></i>
-      </div>
-      </div>
-
-      <div class="members-container">
-      <img src="images/Dale.jpg" alt="image of dale" class="profile-image">
-      <div class="members-text">
-      <p class="activity-comment">Dale Byrd likes the post Facebook's Changes<br>for 2016</p>
-      <p class="time">5 hours ago</p>
-      <i class="arrow-right"></i>
-      </div>
+        <img src="images/Victoria.jpg"  alt="image of victoria" class="profile-image">
+        <div class="members-text">
+        <p class="activity-comment">Victoria Chambers commented <br>on YourApp's SEO Tips</p>
+        <p class="time">4 hours ago</p>
+        <i class="arrow-right"></i>
+        </div>
       </div>
 
       <div class="members-container">
-      <img src="images/Dawn.jpg" alt="image of dawn" class="profile-image">
-      <div class="members-text">
-      <p class="activity-comment">Dawn Wood commented on Facebook's Changes for 2016 </p>
-      <p class="time">5 hours ago</p>
-      <i class="arrow-right"></i>
-      </div>
+        <img src="images/Dale.jpg" alt="image of dale" class="profile-image">
+        <div class="members-text">
+        <p class="activity-comment">Dale Byrd likes the post Facebook's Changes<br>for 2016</p>
+        <p class="time">5 hours ago</p>
+        <i class="arrow-right"></i>
+        </div>
       </div>
 
       <div class="members-container">
-      <img src="images/Dan.jpg" alt="image of dan" class="profile-image">
-      <div class="members-text">
-      <p class="activity-comment">Dan Oliver posted YourApp's <br>SEO Tips</p>
-      <p class="time">1 day ago</p>
-      <i class="arrow-right"></i>
+        <img src="images/Dawn.jpg" alt="image of dawn" class="profile-image">
+        <div class="members-text">
+        <p class="activity-comment">Dawn Wood commented on Facebook's Changes for 2016 </p>
+        <p class="time">5 hours ago</p>
+        <i class="arrow-right"></i>
+        </div>
       </div>
+
+      <div class="members-container">
+        <img src="images/Dan.jpg" alt="image of dan" class="profile-image">
+        <div class="members-text">
+        <p class="activity-comment">Dan Oliver posted YourApp's <br>SEO Tips</p>
+        <p class="time">1 day ago</p>
+        <i class="arrow-right"></i>
+        </div>
       </div>
 
     </section><!-- activity -->
@@ -307,8 +303,6 @@
         </div>
 
         <!-- custom CSS toggle code-->
-
-
 
         <select class="form-field2" id="timezone">
         <option disabled selected>Select a Timezone</option>
